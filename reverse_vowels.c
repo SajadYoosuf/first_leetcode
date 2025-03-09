@@ -3,11 +3,15 @@
 #include <stdbool.h>
 
 bool isvowels(char c){
-    if(c=='A'||c=='a'||c=='e'||c=='E'||c=='i'||c=='I'||c=='o'||c=='O'||c=='u'||c=='U') return true else return false;
+    if(c=='A'||c=='a'||c=='e'||c=='E'||c=='i'||c=='I'||c=='o'||c=='O'||c=='u'||c=='U') {
+        return true ;
+     }else{
+        return false;
+    } 
 }
 
 char* reverse_vowels(char* s){
-    int end=strlen(s-1),start=0;
+    int end=strlen(s)-1,start=0;
     while (start<end)
     {
 if (!isvowels(s[start]))
@@ -26,3 +30,13 @@ if (!isvowels(s[start]))
     return s;
     
 } 
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Reversed vowels: %s\n", reverse_vowels(str));
+
+    return 0;
+}
